@@ -38,8 +38,8 @@ CORS(app)
 def get_drinks():
     try:
         drinks = Drink.query.order_by(Drink.id).all()
-        if drinks is None:
-            abort(404)
+        # if drinks is None:
+        #     return "Empty"
         
         return (jsonify({
             "success": True,
@@ -63,8 +63,8 @@ def get_drinks():
 def get_drinks_detail(jwt):
     try:
         drinks = Drink.query.order_by(Drink.id).all()
-        if drinks is None:
-            abort(404)
+        # if drinks is None:
+        #     abort(404)
         
         return (jsonify({
             "success": True,
